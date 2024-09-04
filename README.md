@@ -2,7 +2,7 @@
 # Description:
 MacOS keeps showing irrelevant Login Item notifications.
 
-@abelcha wrote an Apple Script to remove the notification. I had to change the title of the notification in the script for it to on Sonoma 14.0.
+[@abelcha](https://github.com/abelcha) wrote an Apple Script to remove the notification. I had to change the title of the notification in the script for it to on Sonoma 14.0.
 
 Here's the original Readme from @abelcha:
 
@@ -22,4 +22,4 @@ Here's the original Readme from @abelcha:
 curl -s https://raw.githubusercontent.com/eddzio/OSX-Persistent-Notification-Remover/main/NotifRemover.scpt | osascript
 ```
 
-A million thanks to @abelcha for the original script!
+A million thanks to [@abelcha](https://github.com/abelcha) for the original script!
