@@ -1,20 +1,25 @@
 
 # Description:
+MacOS keeps showing irrelevant Login Item notifications.
 
-For some apps "Background/Login item Added" Notification keeps popping when MBP wakes up. Even after app uninstall. 
-I was able to reproduce it installing Spotify and put mac to sleep with `pmset sleepnow`
+@abelcha wrote an Apple Script to remove the notification. I had to change the title of the notification in the script for it to on Sonoma 14.0.
 
-Performing a "AXPress" on the notification parent element solves this issue
+Here's the original Readme from @abelcha:
 
-# The Fix:
 
-- Add your terminal app to `System Settings -> Privacy & Security -> Accessibility`
-- Run the script:
+# How it works
+
+## Option 1: Apple Scripts
+1. You need to grant Accessibility permissions to the Script Editor app in `System Settings -> Privacy & Security -> Accessibility` — Click the `+` button and add `/Applications/Script Editor.app`
+2. Open the Script Editor app and paste the content of `NotifRemover.scpt`
+3. Run the script by pressing `CMD + R` or pressing the play button on the top right corner of the Script Editor app.
+
+
+## Option 2: via the Terminal
+1. You need to grant access to the terminal app in `System Settings -> Privacy & Security -> Accessibility`
+2. Run the script:
 ```shell
-curl -s https://raw.githubusercontent.com/abelcha/OSX-Persistent-Notification-Remover/main/NotifRemover.scpt | osascript
+curl -s https://raw.githubusercontent.com/eddzio/OSX-Persistent-Notification-Remover/main/NotifRemover.scpt | osascript
 ```
 
-
-
-
-![enter image description here](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTh4d21wNDVvdGRtNDF0a3VrZmQ3bzgzZ2ZrMXNmNm5qdjl3amdvNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cLuHk47tgKwEbvxZm1/giphy.gif)
+A million thanks to @abelcha for the original script!
